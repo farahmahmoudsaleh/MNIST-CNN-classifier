@@ -13,7 +13,15 @@ Complete ML workflow for handwritten digit recognition with MNIST dataset. Featu
 - **Frontend**: HTML, CSS, JavaScript
 - **Machine Learning**: Pre-trained model on MNIST dataset
 
-  ## Usage
+## Usage
 
 1. **Draw Mode**: Draw a digit (0-9) on the canvas and click "Predict"
 2. **Upload Mode**: Upload an image of a handwritten digit and click "Predict"
+
+## Excution steps : 
+
+docker pull farahmsaleh/mnist-classifier-web:latest
+
+docker run -d -p 8080:8080 --name mnist_classifier farahmsaleh/mnist-classifier-web:latest
+
+open link : http://127.0.0.1:8080/
