@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    container_name: mnist_classifier
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+      - model_data:/app/model
+    environment:
+      - FLASK_ENV=development
+    restart: unless-stopped
+
+volumes:
+  model_data:
+    driver: local

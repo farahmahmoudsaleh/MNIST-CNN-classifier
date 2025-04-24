@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MNIST Digit Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>MNIST Digit Classifier</h1>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="openTab('draw')">Draw a Digit</button>
+            <button class="tab" onclick="openTab('upload')">Upload an Image</button>
+        </div>
+        
+        <div id="draw-tab" class="tab-content active">
+            <div class="draw-container">
+                <p>Draw a digit (0-9) in the box below:</p>
+                <canvas id="canvas" width="280" height="280"></canvas>
+                <div class="button-row">
+                    <button onclick="clearCanvas()">Clear</button>
+                    <button onclick="predictDrawing()">Predict</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="upload-tab" class="tab-content">
+            <div class="upload-container">
+                <p>Upload an image of a handwritten digit:</p>
+                <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(this)">
+                <img id="preview" class="preview-image" style="display:none;">
+                <button onclick="predictUpload()" id="predictUploadBtn" disabled>Predict</button>
+            </div>
+        </div>
+        
+        <div id="result">
+            <div id="prediction-container" style="display:none;">
+                <p>Prediction:</p>
+                <div class="prediction" id="prediction"></div>
+                <div class="confidence" id="confidence"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #eee;
+    border: none;
+    flex: 1;
+    text-align: center;
+}
+
+.tab.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.draw-container, .upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#canvas {
+    border: 2px solid #333;
+    border-radius: 4px;
+    cursor: crosshair;
+    background-color: black;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+}
+
+#result {
+    font-size: 24px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.prediction {
+    font-size: 72px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.confidence {
+    font-size: 18px;
+    color: #555;
+}
+
+input[type="file"] {
+    margin: 20px 0;
+}
+
+.preview-image {
+    max-width: 280px;
+    max-height: 280px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+}
